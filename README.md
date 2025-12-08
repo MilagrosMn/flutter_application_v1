@@ -87,8 +87,9 @@ lib/
 
 ## Dispositivo de prueba
 
--   Emulador Android Studio
--   Pixel 2 -- API 34
+Emulador Android Studio · Pixel 2 (API 34)
+Pantalla: 5.0" · 1920×1080 px · 441 ppi
+Dimensiones: 145.7 × 69.7 × 7.8 mm
 
 ## Autora
 
