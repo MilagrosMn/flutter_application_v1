@@ -17,7 +17,7 @@ rutas nombradas y estructura modular.
 -   Uso de assets locales (portadas en assets/portadas/).
 
 ## Estructura del proyecto
-
+```
 assets/
 └── portadas/
     ├── pelicula1.png
@@ -56,7 +56,7 @@ lib/
 │   └── widgets.dart        
 │
 └── main.dart
-
+```
 
 ## Rutas
 
