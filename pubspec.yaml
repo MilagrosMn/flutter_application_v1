@@ -10,6 +10,7 @@ dependencies:
   http: ^1.1.0
   provider: ^6.0.5
   flutter_dotenv: ^5.1.0
+  shared_preferences: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -19,6 +20,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+  - family: Orbitron
+    fonts:
+      - asset: assets/fonts/Orbitron-Regular.ttf
+      - asset: assets/fonts/Orbitron-Bold.ttf
+      - asset: assets/fonts/Orbitron-ExtraBold.ttf
+      - asset: assets/fonts/Orbitron-SemiBold.ttf
+      - asset: assets/fonts/Orbitron-Medium.ttf
   assets:
     - assets/portadas/
     - .env

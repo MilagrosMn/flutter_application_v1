@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/app_drawer.dart';
+import '../widgets/drawer_menu.dart';
 import '../utils/routes.dart';
-
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const AppDrawer(),
+      drawer: DrawerMenu(),
       appBar: AppBar(title: const Text("Inicio")),
       body: Center(
         child: ElevatedButton(

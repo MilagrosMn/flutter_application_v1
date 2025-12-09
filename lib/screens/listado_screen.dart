@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/movie_provider.dart';
+import '../widgets/drawer_menu.dart';
 import '../widgets/card_basic.dart';
 import '../utils/routes.dart';
 
@@ -24,7 +25,7 @@ class _ListadoScreenState extends State<ListadoScreen> {
 
     return Scaffold(
       appBar: AppBar(title: const Text("Listado de Películas")),
-      drawer: const Drawer(),
+      drawer: DrawerMenu(),
       body: provider.loading
           ? const Center(child: CircularProgressIndicator())
           : provider.error != null

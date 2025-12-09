@@ -41,7 +41,7 @@ class _DetalleScreenState extends State<DetalleScreen> {
         child: Column(
           children: [
             if (movie!.imagen.isNotEmpty)
-              Image.network(movie!.imagen, height: 200),
+              Image.asset(movie!.imagen, height: 500, width: 210,),
 
             TextFormField(
               initialValue: movie!.director,
