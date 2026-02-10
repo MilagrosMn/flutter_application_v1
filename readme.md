@@ -63,12 +63,6 @@ La aplicación consume una API REST desarrollada por la autora, con los siguient
 - `GET /peliculas` → listado de películas.
 - `GET /peliculas/{id}` → detalle de una película.
 
-El acceso a la API se configura mediante una variable de entorno:
-
-```
-API_URL=<url_base_de_la_api>
-```
-
 ---
 
 ## Ejecución del proyecto
