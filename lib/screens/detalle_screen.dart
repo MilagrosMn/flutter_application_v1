@@ -1,0 +1,87 @@
+import 'package:flutter/material.dart';
+import '../services/api_service.dart';
+import '../models/movie.dart'; 
+
+
+//URL de la API en Render
+const String apiUrl = 'API_URL';
+
+class DetalleScreen extends StatefulWidget {
+  const DetalleScreen({super.key});
+
+  @override
+  State<DetalleScreen> createState() => _DetalleScreenState();
+}
+
+class _DetalleScreenState extends State<DetalleScreen> {
+  // ApiService ahora recibe la baseUrl
+  final ApiService api = ApiService();
+
+  Movie? movie;
+  bool activo = true;
+  bool loading = true;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final id = ModalRoute.of(context)!.settings.arguments as int;
+    load(id);
+  }
+
+  Future<void> load(int id) async {
+    movie = await api.fetchDetalle(id);
+    loading = false;
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (loading) {
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    return Scaffold(
+      appBar: AppBar(title: Text(movie!.titulo)),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            // imagen desde la API
+            if (movie!.imagen.isNotEmpty)
+              Image.network(
+                movie!.imagen,
+                height: 500,
+                width: 210,
+              ),
+
+            TextFormField(
+              initialValue: movie!.director,
+              decoration: const InputDecoration(
+                label: Text("Descripción"),
+              ),
+            ),
+
+            SwitchListTile(
+              title: const Text("Activo"),
+              value: activo,
+              onChanged: (v) => setState(() => activo = v),
+            ),
+
+            const SizedBox(height: 20),
+
+            ElevatedButton(
+              onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Cambios guardados"),
+                ),
+              ),
+              child: const Text("Guardar"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
