@@ -63,11 +63,18 @@ lib/
 
 ## Buenas prácticas incluidas
 
+<<<<<<< HEAD
 - **FutureBuilder** para manejar cargas asíncronas.  
 - **Provider** como gestor de estado.  
 - **Modelos** tipados generados con **quicktype.io** a partir de JSON.  
 - **Variables de entorno** con `flutter_dotenv`.  
 - **Peticiones HTTP** con el paquete `http`.
+=======
+La aplicación consume una API REST desarrollada por la autora, con los siguientes endpoints:
+
+- `GET /peliculas` → listado de películas.
+- `GET /peliculas/{id}` → detalle de una película.
+>>>>>>> 1fadc67e2f7cf34fd15b242d1d6f685882c38e76
 
 ---
 
