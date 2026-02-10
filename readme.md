@@ -1,4 +1,4 @@
-# Prototipo Flutter – Laboratorio IV (UTN)
+# API REST Flutter | Laboratorio IV (UTN)
 
 Proyecto desarrollado en Flutter que consume una **API REST de películas**. La aplicación permite listar películas y visualizar el detalle de cada una, utilizando navegación por rutas, arquitectura modular y consumo de servicios HTTP.
 
