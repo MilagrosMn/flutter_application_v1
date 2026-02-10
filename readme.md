@@ -1,90 +1,92 @@
-# Prototipo Flutter – Laboratorio IV (UTN)
+## Flutter Movie App — Laboratorio IV (UTN)
 
-Proyecto desarrollado en Flutter que consume una **API REST de películas**. La aplicación permite listar películas y visualizar el detalle de cada una, utilizando navegación por rutas, arquitectura modular y consumo de servicios HTTP.
+Aplicación desarrollada en Flutter que consume una **API REST en Node.js**, la cual obtiene datos desde la API pública de **The Movie Database (TMDB)**.
 
 ---
 
-## Funcionalidades
+## Funcionalidades principales
 
-- Pantalla principal (Home).
-- Menú lateral (Drawer).
-- Listado de películas obtenido desde API REST.
+- Home Screen.
+- Drawer Menu.
+- Listado de películas obtenido desde la API REST.
 - Visualización del detalle de una película.
-- Navegación mediante rutas nombradas.
-- Consumo de API utilizando servicio dedicado.
-- Manejo de estado mediante Provider.
+- Búsqueda de películas.
+- Consumo de datos asincrónicos mediante FutureBuilder.
+- Gestión de estado con Provider.
+- Navegación mediante rutas.
+- Uso de widgets reutilizables.
 
 ---
 
-## Requisitos cumplidos
+## Estructura principal
 
-- Uso de **Flutter** como framework principal.
-- Arquitectura modular con separación de responsabilidades.
-- Implementación de **modelos de datos**.
-- Consumo de **API REST externa** mediante HTTP.
-- Listado dinámico utilizando `ListView`.
-- Vista de detalle por identificador.
-- Navegación por rutas configuradas en `main.dart`.
-- Uso de **Provider** para la gestión de estado.
-- Variables de entorno mediante `flutter_dotenv`.
-- Código organizado, legible y mantenible.
-
----
-
-## Estructura del proyecto
-
-assets/ 
-└── portadas/
-```
+```text
 lib/
+│
+├── helpers/
+│   └── preferences.dart
+│
 ├── models/
+│   ├── models.dart
+│   └── movie.dart
 │
 ├── providers/
+│   ├── movie_provider.dart
+│   └── theme_provider.dart
 │
 ├── screens/
+│   ├── detalle_screen.dart
+│   ├── form_screen.dart
+│   ├── home_screen.dart
+│   └── listado_screen.dart
+│   └── screens.dart
 │
 ├── services/
-|
-│__ theme/
-|
+│   └── api_service.dart
+│
+├── theme/
+│   └── default_theme.dart
+│
 ├── utils/
+│   ├── constants.dart
+│   └── routes.dart
 │
 ├── widgets/
+│   ├── card_basic.dart
+│   ├── drawer_menu.dart
+│   └── widgets.dart
 │
 └── main.dart
 ```
 
 ---
 
-## API de películas
+## Buenas prácticas incluidas
 
-La aplicación consume una API REST desarrollada por la autora, con los siguientes endpoints:
-
-- `GET /peliculas` → listado de películas.
-- `GET /peliculas/{id}` → detalle de una película.
-
-El acceso a la API se configura mediante una variable de entorno:
-
-```
-API_URL=<url_base_de_la_api>
-```
+- **FutureBuilder** para manejar cargas asíncronas.  
+- **Provider** como gestor de estado.  
+- **Modelos** tipados generados con **quicktype.io** a partir de JSON.  
+- **Variables de entorno** con `flutter_dotenv`.  
+- **Peticiones HTTP** con el paquete `http`.
 
 ---
 
-## Ejecución del proyecto
+## Instalación
 
-Desde la raíz del proyecto:
-
-```
+```bash
+# instalar dependencias Flutter
 flutter pub get
+
+# ejecutar app
 flutter run
 ```
 
-> Nota: En entorno web, el consumo de la API puede verse afectado por políticas CORS propias del navegador. El funcionamiento completo se verifica en entorno móvil.
+---
+
+Nota: En entorno web, el consumo de la API puede verse afectado por políticas CORS propias del navegador. El funcionamiento completo se verifica en entorno móvil.
 
 ---
 
-## Autora
+### Autora
 
-**Milagros Muñoz Nicosia**
-
+Milagros Muñoz Nicosia
